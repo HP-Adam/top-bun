@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS topbun_db;
+
+CREATE DATABASE topbun_db;
