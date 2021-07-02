@@ -1,7 +1,17 @@
 <ol class="post-list">
   {{#each posts as |post|}}
   <li>
-    {{> post-info post }}
+    <article class="post">
+  <div class="title">
+    <a href="/post/{{post.id}}">{{post.title}}</a>
+    <span>({{format_url post.post_url}})</span>
+  </div>
+  <div class="meta">
+    {{post.vote_count}} {{format_plural "point" post.vote_count}} by {{user.username}} on {{format_date post.created_at}}
+    |
+    <a href="/post/{{id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+  </div>
+</article>
   </li>
   {{/each}}
 </ol>
